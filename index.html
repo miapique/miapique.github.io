@@ -112,6 +112,14 @@ p{margin:0 0 1em; max-width:65ch}
 .pubs em{font-style:italic}
 .pubs a{word-break:break-all; font-family:var(--mono); font-size:13px}
 .me{font-weight:600}
+.press{list-style:none; padding:0; margin:0; display:grid; gap:0}
+.press li{border-bottom:1px solid var(--line)}
+.press a{display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding-block:14px; text-decoration:none; color:var(--fg)}
+.press a:hover .pt{color:var(--accent)}
+.press .pt{font-weight:600; min-width:0; transition:color .2s}
+.press .src{font-family:var(--mono); font-size:12.5px; color:var(--muted); white-space:nowrap}
+.press .ps{grid-column:1 / -1; color:var(--muted); font-size:15px}
+@media (max-width:520px){ .press a{grid-template-columns:1fr} }
 
 /* lists */
 .roles{list-style:none; padding:0; margin:0; display:grid; gap:12px}
@@ -143,6 +151,7 @@ footer{padding-block:48px 40px; color:var(--muted); font-size:13.5px}
       <a href="#research">Research</a>
       <a href="#path">Path</a>
       <a href="#publications">Publications</a>
+      <a href="#press">In the news</a>
       <a href="#community">Community</a>
       <a href="#beyond">Beyond the lab</a>
     </nav>
@@ -209,6 +218,16 @@ footer{padding-block:48px 40px; color:var(--muted); font-size:13.5px}
       <li><span class="year">2021 · Bulletin of Volcanology 83(5)</span>Tadini, A., Roche, O., Samaniego, P., et al. (incl. <span class="me">Pique, M.</span>). Eruption type probability and eruption source parameters at Cotopaxi and Guagua Pichincha volcanoes (Ecuador) with uncertainty quantification. <a href="https://doi.org/10.1007/s00445-021-01458-z">doi.org/10.1007/s00445-021-01458-z</a></li>
     </ul>
     <p style="margin-top:18px; font-size:15px; color:var(--muted)">Conference contributions at IAVCEI 2023 (Rotorua) and AGU Fall Meeting 2019 (San Francisco).</p>
+  </section>
+
+  <section id="press">
+    <h2>In the news</h2>
+    <ul class="press">
+      <li><a href="https://news.nau.edu/a-new-world-view/" target="_blank" rel="noopener"><span class="pt">A new world view: How a year abroad changed one student's perspective on life</span><span class="src">NAU News · 2019</span><span class="ps">A year studying volcanoes and Spanish in Argentina, and how it reshaped my view of the world.</span></a></li>
+      <li><a href="https://in.nau.edu/interdisciplinary-global-programs/mia-piques-research-in-latin-american-volcanoes-featured-in-lumberchats-podcast/" target="_blank" rel="noopener"><span class="pt">Mia Pique's research in Latin American volcanoes featured in Lumberchats podcast</span><span class="src">NAU Global Programs</span><span class="ps">A podcast conversation about volcano research in Argentina and Ecuador.</span></a></li>
+      <li><a href="https://news.nau.edu/long-term-study-abroad/" target="_blank" rel="noopener"><span class="pt">Experience the world with one of the best in the world: NAU ranks 7th for long-term study abroad</span><span class="src">NAU News</span><span class="ps">Featured as an Honors College student studying in Tucumán and researching Reventador Volcano in Ecuador.</span></a></li>
+      <li><a href="https://nau.edu/cefns/international-experiences-mia-pique/" target="_blank" rel="noopener"><span class="pt">International Experiences: Mia Pique</span><span class="src">NAU CEFNS</span><span class="ps">A student profile on growing as a scientist during a year in Argentina and Ecuador.</span></a></li>
+    </ul>
   </section>
 
   <section id="community">
