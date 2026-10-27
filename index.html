@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mia Pique, PhD student at Stanford University and geologist working across rock physics, geochemistry, critical minerals, and low-carbon geomaterials.">
+<meta property="og:title" content="Mia Pique">
+<meta property="og:description" content="PhD student at Stanford University and geologist.">
+<meta property="og:image" content="mia-photo.jpg">
+<title>Mia Pique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column; strata bands mark section breaks; path shown as a stratigraphic column with field coordinates */
+:root{
+  --bg:#eef0f3;          /* pale granite */
+  --surface:#f8f9fb;
+  --fg:#1d2230;          /* basalt ink */
+  --muted:#5a6173;
+  --line:#d3d7e0;
+  --accent:#6b3fa0;      /* fluorite violet */
+  --accent-soft:#e7def3;
+  --s1:#3b4256; --s2:#6b3fa0; --s3:#a58bc7; --s4:#c9b38a; --s5:#8a6f4e;
+  --display:"Gloock", "Georgia", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141722; --surface:#1b1f2c; --fg:#e8e9ef; --muted:#a3a8b8; --line:#2c3142;
+    --accent:#b99be0; --accent-soft:#2a2340;
+    --s1:#2c3142; --s2:#7d55b3; --s3:#b99be0; --s4:#b9a079; --s5:#7a6246;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141722; --surface:#1b1f2c; --fg:#e8e9ef; --muted:#a3a8b8; --line:#2c3142;
+  --accent:#b99be0; --accent-soft:#2a2340;
+  --s1:#2c3142; --s2:#7d55b3; --s3:#b99be0; --s4:#b9a079; --s5:#7a6246;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{ margin:0;
+  background:var(--bg); color:var(--fg);
+  font-family:var(--body); font-size:17px; line-height:1.65;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap{max-width:760px; margin:0 auto}
+a{color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+/* draft chip + nav */
+.top{display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; justify-content:space-between; padding-block:20px 8px}
+.draft{font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px}
+nav{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:14px}
+nav a{color:var(--muted); text-decoration:none}
+nav a:hover{color:var(--fg)}
+
+/* hero */
+.hero{padding-block:48px 28px}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--display); font-weight:400; font-size:clamp(46px, 9vw, 76px); line-height:1.02; margin:.25em 0 .2em; text-wrap:balance}
+.role{font-size:19px; color:var(--muted); max-width:34em; margin:0}
+.role strong{color:var(--fg); font-weight:600}
+.hero-grid{display:grid; grid-template-columns:230px 1fr; gap:36px; align-items:center}
+.hero-text{min-width:0}
+.portrait{width:230px; height:230px; max-width:100%; object-fit:cover; border-radius:6px; border:4px solid var(--surface); box-shadow:0 0 0 2px var(--s3)}
+.cv-btn{display:inline-block; margin-top:18px; font-size:15px; font-weight:600; text-decoration:none; color:var(--surface); background:var(--accent); padding:10px 18px; border-radius:999px}
+.cv-btn:hover{filter:brightness(1.08)}
+@media (max-width:600px){ .hero-grid{grid-template-columns:1fr; gap:20px} .portrait{width:200px; height:200px} }
+
+/* strata band */
+.strata{display:grid; grid-template-rows:6px 3px 9px 2px 5px; margin-block:36px 8px; border-radius:2px; overflow:hidden}
+.strata i:nth-child(1){background:var(--s1)} .strata i:nth-child(2){background:var(--s4)}
+.strata i:nth-child(3){background:var(--s2)} .strata i:nth-child(4){background:var(--s3)}
+.strata i:nth-child(5){background:var(--s5)}
+.strata.thin{grid-template-rows:2px 1px 3px; margin-block:56px 0; opacity:.8}
+
+section{padding-top:40px}
+h2{font-family:var(--display); font-weight:400; font-size:32px; line-height:1.15; margin:0 0 18px; text-wrap:balance}
+h3{font-size:18px; font-weight:600; margin:0 0 6px; line-height:1.35}
+p{margin:0 0 1em; max-width:65ch}
+.lede p{font-size:18px}
+
+/* research */
+.projects{display:grid; gap:18px}
+.project{background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:22px 24px}
+.tag{font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; display:block}
+.project p{margin-bottom:.6em}
+.methods{font-family:var(--mono); font-size:13px; color:var(--muted); margin:10px 0 0}
+.fig{font-variant-numeric:tabular-nums; font-weight:600; color:var(--fg)}
+
+/* stratigraphic column */
+.column{list-style:none; margin:0; padding:0; border-left:3px solid var(--line)}
+.column li{position:relative; padding:0 0 22px 22px; display:grid; grid-template-columns:1fr auto; gap:2px 16px}
+.column li::before{content:""; position:absolute; left:-8px; top:6px; width:13px; height:13px; border-radius:50%; background:var(--bg); border:3px solid var(--s3)}
+.column li:first-child::before{border-color:var(--accent); background:var(--accent)}
+.column .place{font-weight:600; min-width:0}
+.column .coord{font-family:var(--mono); font-size:12.5px; color:var(--muted); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap}
+.column .what{grid-column:1 / -1; color:var(--muted); font-size:15.5px}
+@media (max-width:520px){ .column li{grid-template-columns:1fr} .column .coord{text-align:left} }
+
+/* pubs */
+.pubs{list-style:none; padding:0; margin:0; display:grid; gap:16px}
+.pubs li{padding-left:16px; border-left:2px solid var(--line); font-size:15.5px; min-width:0}
+.pubs .year{font-family:var(--mono); font-size:12.5px; color:var(--muted); display:block}
+.pubs em{font-style:italic}
+.pubs a{word-break:break-all; font-family:var(--mono); font-size:13px}
+.me{font-weight:600}
+
+/* lists */
+.roles{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+.roles li{display:grid; grid-template-columns:1fr auto; gap:0 16px; padding-bottom:12px; border-bottom:1px solid var(--line)}
+.roles .when{font-family:var(--mono); font-size:12.5px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+.roles .sub{grid-column:1 / -1; color:var(--muted); font-size:15px}
+@media (max-width:520px){ .roles li{grid-template-columns:1fr} }
+
+/* beyond */
+.beyond{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-top:8px}
+.link-card{display:block; text-decoration:none; color:var(--fg); background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:20px 22px; transition:border-color .2s}
+.link-card:hover{border-color:var(--accent)}
+.link-card .t{font-family:var(--display); font-size:22px; display:block; margin-bottom:4px}
+.link-card .d{color:var(--muted); font-size:15px; display:block}
+.link-card .u{font-family:var(--mono); font-size:12.5px; color:var(--accent); display:block; margin-top:10px}
+
+.contact{display:flex; flex-wrap:wrap; gap:10px 22px; font-size:15.5px}
+footer{padding-block:48px 40px; color:var(--muted); font-size:13.5px}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <span class="draft">Mia Pique</span>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#path">Path</a>
+      <a href="#publications">Publications</a>
+      <a href="#community">Community</a>
+      <a href="#beyond">Beyond the lab</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-grid">
+      <img class="portrait" src="mia-photo.jpg" alt="Mia Pique smiling on a beach at sunset, with a sea stack and waves behind her" width="560" height="560">
+      <div class="hero-text">
+        <div class="eyebrow">Earth and Planetary Sciences</div>
+        <h1>Mia Pique</h1>
+        <p class="role"><strong>PhD student at Stanford University and geologist</strong> working across rock physics, geochemistry, critical minerals, and low-carbon geomaterials.</p>
+        <a class="cv-btn" href="Mia_Pique_CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+      </div>
+    </div>
+    <div class="strata" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <section id="about" class="lede">
+    <h2>About</h2>
+    <p>Mia Pique is a Ph.D. student in Earth and Planetary Sciences at Stanford University's Doerr School of Sustainability, working in Professor Tiziana Vanorio's Rock Physics and Geomechanics Lab. Her doctoral research maps rare earth element deposits in carbonatite and alkaline igneous systems, combining rock physics with imaging techniques to better understand where critical minerals form and how to find them.</p>
+    <p>For her M.S., Mia studied how carbon byproducts from methane pyrolysis can strengthen white Portland cement, turning a waste stream into a performance-enhancing material for lower-carbon construction.</p>
+    <p>Before Stanford, Mia worked as a senior staff geologist in the Bay Area, directing geotechnical investigations for public clients like SFO, the U.S. Army Corps of Engineers, and the SFPUC, and conducted mineralogy, volcanology, and geochemistry research in Ecuador, Argentina, Australia, and the United States. A bilingual, first-generation Cuban-American scientist, she serves as an Access, Belonging, and Community Liaison for Stanford's Department of Earth and Planetary Sciences and is passionate about mentoring students and building inclusive STEM communities.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="projects">
+      <article class="project">
+        <span class="tag">Ph.D. · Critical minerals</span>
+        <h3>Mapping rare earth elements in carbonatite and alkaline igneous systems</h3>
+        <p>Rare earth elements underpin magnets, batteries, and much of the energy transition, yet supply is concentrated in a few places. My doctoral work characterizes where and how these elements occur in primary deposits, how they behave within mineral structures, and how rock physics and imaging can help locate and characterize them responsibly.</p>
+        <p class="methods">Rock physics · imaging · ArcGIS Pro · QGIS · Python</p>
+      </article>
+      <article class="project">
+        <span class="tag">M.S. · Low-carbon geomaterials</span>
+        <h3>Carbon byproducts from methane pyrolysis in white Portland cement</h3>
+        <p>Methane pyrolysis produces hydrogen and a solid, carbon nanotube-bearing byproduct. I investigated incorporating this bed carbon into white Portland cement through additive-free mechanical processing. At 1 wt.% cement replacement, bed-carbon formulations reached roughly <span class="fig">21–23%</span> higher compressive strength than the control.</p>
+        <p class="methods">P- and S-wave velocity · porosity · permeability · compressive and tensile strength · SEM/EDS</p>
+        <p style="margin:12px 0 0; font-size:15px"><a href="https://doi.org/10.25740/xy416yv9270">Read the thesis in the Stanford Digital Repository</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="path">
+    <h2>Path</h2>
+    <p style="color:var(--muted)">Youngest layer on top, the way geologists read a column.</p>
+    <ol class="column">
+      <li><span class="place">Stanford University</span><span class="coord">37.43°N 122.17°W</span><span class="what">Ph.D. (2026–present) and M.S. (2024–2026), Earth and Planetary Sciences</span></li>
+      <li><span class="place">AGS, Inc., San Francisco</span><span class="coord">37.77°N 122.42°W</span><span class="what">Staff, then Senior Staff Geologist (2023–2024): geotechnical investigations for SFO, SFPUC, the U.S. Army Corps of Engineers, and the City of San Francisco</span></li>
+      <li><span class="place">University of Queensland, Brisbane</span><span class="coord">27.50°S 153.01°E</span><span class="what">Geochemistry research on diamonds and ultra-high-pressure minerals as records of deep-mantle recycling (2020–2022)</span></li>
+      <li><span class="place">Instituto Geofísico, Quito</span><span class="coord">0.21°S 78.49°W</span><span class="what">Volcano monitoring and El Reventador ash characterization; ICP-MS work with the Langmuir Group at Harvard</span></li>
+      <li><span class="place">Universidad Nacional de Tucumán</span><span class="coord">26.83°S 65.20°W</span><span class="what">Exchange student and geology teaching assistant, teaching entirely in Spanish (2018)</span></li>
+      <li><span class="place">Northern Arizona University, Flagstaff</span><span class="coord">35.18°N 111.65°W</span><span class="what">B.S. Geology and B.A. Spanish, with Honors (2015–2020); President's Prize recipient</span></li>
+    </ol>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pubs">
+      <li><span class="year">In preparation</span>Moise, H.*, <span class="me">Pique, M.*</span>, Liang, C., Majumdar, A., Vanorio, T., &amp; Cargnello, M. Reframing the addressable cement market for methane pyrolysis: from sequestration sink to value-added reinforcement [working title]. To be submitted to <em>Science</em>. <span style="color:var(--muted)">*Equal contribution.</span></li>
+      <li><span class="year">2026 · M.S. thesis</span><span class="me">Pique, M.</span> Physical and mechanical properties of sustainable cement with synergetic carbon nanotube byproducts from methane pyrolysis. Stanford University. <a href="https://doi.org/10.25740/xy416yv9270">doi.org/10.25740/xy416yv9270</a></li>
+      <li><span class="year">2024 · Bulletin of Volcanology 86(11)</span>Gaunt, H. E., <span class="me">Pique, M. M.</span>, Hernández, S., Hidalgo, S., Córdova, M. D., Ramón, P., &amp; Bernard, B. Unravelling eruption dynamics at El Reventador, Ecuador: linking the physiochemical properties of volcanic ash with geophysical, geochemical and satellite remote sensing data. <a href="https://doi.org/10.1007/s00445-024-01777-x">doi.org/10.1007/s00445-024-01777-x</a></li>
+      <li><span class="year">2021 · Bulletin of Volcanology 83(5)</span>Tadini, A., Roche, O., Samaniego, P., et al. (incl. <span class="me">Pique, M.</span>). Eruption type probability and eruption source parameters at Cotopaxi and Guagua Pichincha volcanoes (Ecuador) with uncertainty quantification. <a href="https://doi.org/10.1007/s00445-021-01458-z">doi.org/10.1007/s00445-021-01458-z</a></li>
+    </ul>
+    <p style="margin-top:18px; font-size:15px; color:var(--muted)">Conference contributions at IAVCEI 2023 (Rotorua) and AGU Fall Meeting 2019 (San Francisco).</p>
+  </section>
+
+  <section id="community">
+    <h2>Community and mentorship</h2>
+    <ul class="roles">
+      <li><span>Access, Belonging, and Community Liaison, Stanford Earth and Planetary Sciences</span><span class="when">2025–present</span><span class="sub">Community-building and inclusion for graduate students and postdoctoral scholars</span></li>
+      <li><span>Co-Founder, Girls Teaching Girls</span><span class="when">2017–2020</span><span class="sub">Hands-on STEAM mentorship for girls in underserved communities</span></li>
+      <li><span>President and Co-Founder, NAU Honors College Students for Inclusion</span><span class="when">2016–2020</span><span class="sub">Workshops, diversity programming, and campus outreach</span></li>
+      <li><span>NSF LSAMP Scholar and Junior Mentor</span><span class="when">2017–2018</span><span class="sub">Research mentorship for a first-year STEM student</span></li>
+    </ul>
+  </section>
+
+  <section id="beyond">
+    <h2>Beyond the lab</h2>
+    <p>Outside of research, I write, paint, and collect moments. <em>Captured Instances</em> is my personal blog, a mix of fieldwork stories, travel, science for everyone, and reflections gathered from Flagstaff to Quito to the Bay. I'm also an acrylic and digital artist, and through <em>House of My Art</em> I create abstract and surrealist work inspired by the universe, along with portraits and commissions.</p>
+    <div class="beyond">
+      <a class="link-card" href="https://capturedinstances.com">
+        <span class="t">Captured Instances</span>
+        <span class="d">Fieldwork, travel, and reflections</span>
+        <span class="u">capturedinstances.com</span>
+      </a>
+      <a class="link-card" href="https://houseofmy.art.blog">
+        <span class="t">House of My Art</span>
+        <span class="d">Abstract and surrealist painting</span>
+        <span class="u">houseofmy.art.blog</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Find me</h2>
+    <div class="contact">
+      <a href="Mia_Pique_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a href="https://profiles.stanford.edu/miapique">Stanford Profile</a>
+      <a href="https://rgl.stanford.edu/people/mia-pique">Lab page</a>
+      <a href="https://orcid.org/0009-0001-6492-1592">ORCID</a>
+      <a href="https://www.linkedin.com/in/mia-pique-821a27133/">LinkedIn</a>
+    </div>
+  </section>
+
+  <div class="strata thin" aria-hidden="true"><i></i><i></i><i></i></div>
+  <footer>Mia Pique · Earth and Planetary Sciences, Stanford University · Updated October 2026</footer>
+</div>
+
+</body>
+</html>
